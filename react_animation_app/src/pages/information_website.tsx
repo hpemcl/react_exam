@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OnePage = () => {
+const InformationwWebsite = () => {
   return (
     <div>
       <h1>One-page Application with React-Reveal</h1>
@@ -9,4 +9,4 @@ const OnePage = () => {
   );
 };
 
-export default OnePage;
+export default InformationwWebsite;
