@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import useMeasure from 'react-use-measure';
 import { useSpring, animated } from '@react-spring/web';
-import styles from './styles.module.css'; 
+import styles from './styles.module.css';
 
-const AnimatingAuto: React.FC = () => {
+interface AnimatingAutoProps {
+  target: number;
+}
+
+const AnimatingAuto: React.FC<AnimatingAutoProps> = ({ target }) => {
   const [open, toggle] = useState(false);
   const [ref, { width }] = useMeasure();
-  const props = useSpring({ width: open ? width : 0 });
+  const props = useSpring({ width: open ? target : 0 });
 
   return (
     <div className={styles.container} onClick={() => toggle(!open)}>

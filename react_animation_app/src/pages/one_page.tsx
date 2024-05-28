@@ -73,9 +73,9 @@ const OnePage: React.FC = () => {
         id="tour"
         className="py-60"
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 50 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 3 }}
       >
         <h2 className="text-3xl font-bold text-center mb-8 my-8">TOUR</h2>
         <div className="space-y-4 max-w-2xl mx-auto">
