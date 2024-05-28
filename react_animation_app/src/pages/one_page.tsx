@@ -1,95 +1,154 @@
 import React from 'react';
-import Dock from '../components/dock';
-import DockCard from '../components/dockCard';
-import DockDivider from '../components/dockDivider';
-import Card from '../components/card';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import '../app/globals.css';
 
-const GRADIENTS = [
-  'https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1-p-130x130q80.jpeg',
-  'https://products.ls.graphics/mesh-gradients/images/04.-Hopbush_1-p-130x130q80.jpeg',
-  'https://products.ls.graphics/mesh-gradients/images/06.-Wisteria-p-130x130q80.jpeg',
-  'https://products.ls.graphics/mesh-gradients/images/09.-Light-Sky-Blue-p-130x130q80.jpeg',
-  'https://products.ls.graphics/mesh-gradients/images/12.-Tumbleweed-p-130x130q80.jpeg',
-  'https://products.ls.graphics/mesh-gradients/images/15.-Perfume_1-p-130x130q80.jpeg',
-  null,
-  'https://products.ls.graphics/mesh-gradients/images/36.-Pale-Chestnut-p-130x130q80.jpeg',
-];
 
-const CssAnimation: React.FC = () => {
+const OnePage: React.FC = () => {
   return (
-    <div className="bg-[#121212] text-white min-h-screen">
-      <header className="min-h-screen flex flex-col justify-center items-start p-8 space-y-6">
-        <span className="bg-blue-500 text-sm px-4 py-1 rounded-full">Latest update</span>
-        <h1 className="text-6xl font-bold max-w-xl">Welcome to react animation demonstration</h1>
-        <p className="text-lg max-w-xl">Lorem ipsum dolor sit amet, consectetur sadipiscing elit, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</p>
-        <div className="space-x-4">
-          <button className="bg-blue-600 px-6 py-2 rounded">Get started</button>
-          <button className="bg-gray-700 px-6 py-2 rounded">Live Demo</button>
+    <div className="bg-gradient-to-r from-red-300 text-white">
+      <header className="flex justify-between items-center p-4">
+        <div className="flex space-x-4">
+          <Image src="/images/facebook.svg" alt="Facebook" width={24} height={24} />
+          <Image src="/images/instagram.svg" alt="Instagram" width={24} height={24} />
+          <Image src="/images/tiktok.svg" alt="TikTok" width={24} height={24} />
+          <Image src="/images/twitter-x.svg" alt="Twitter" width={24} height={24} />
+          <Image src="/images/youtube.svg" alt="YouTube" width={24} height={24} />
         </div>
-        <Image src="/path/to/your/image.jpg" alt="Image" width={500} height={300} />
+        <nav className="flex space-x-6 font-bold">
+          <a href="#home">HOME</a>
+          <a href="#products">PRODUCTS</a>
+          <a href="#tour">TOUR</a>
+          <a href="#new-album">NEW ALBUM</a>
+          <a href="#sign-up">SIGN UP</a>
+          <a href="#buy">BUY</a>
+        </nav>
       </header>
-      <section className="py-16 text-center">
-        <p className="text-lg">Lorem ipsum dolor sit amet, consectetur sadipiscing elit, sed</p>
-        <div className="flex justify-center space-x-4 mt-8">
-          <button className="bg-white text-black px-4 py-2 rounded">Sponsor</button>
-          <button className="bg-white text-black px-4 py-2 rounded">Sponsor</button>
-          <button className="bg-white text-black px-4 py-2 rounded">Sponsor</button>
-          <button className="bg-white text-black px-4 py-2 rounded">Sponsor</button>
-          <button className="bg-white text-black px-4 py-2 rounded">Sponsor</button>
-        </div>
-      </section>
-      <section className="py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">Deploy faster</h2>
-          <p className="mt-4 text-lg">Welcome to react animation demonstration</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
-            <div className="w-12 h-12 bg-blue-500 mx-auto mb-4"></div>
+
+      <motion.section
+        className="min-h-screen flex flex-col justify-center items-center text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-4xl font-bold">ARTIST NAME</h1>
+        <p className="mt-4 max-w-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button className="mt-6 px-4 py-2 font-bold text-white bg-red-900 rounded">PRE-ORDER NOW</button>
+      </motion.section>
+
+      <motion.section
+        id="products"
+        className="py-30 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-3xl font-bold mb-8">PRODUCTS</h2>
+        <div className="flex justify-center space-x-8 ">
+          <div className="bg-white text-black p-6 rounded-lg">
             <h3 className="text-xl font-bold">Lorem ipsum</h3>
             <p className="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Learn more</button>
+            <button className="mt-4 px-4 py-2 font-bold text-white bg-red-900 rounded">SHOP NOW</button>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
-            <div className="w-12 h-12 bg-blue-500 mx-auto mb-4"></div>
+          <div className="bg-white text-black p-6 rounded-lg">
             <h3 className="text-xl font-bold">Lorem ipsum</h3>
             <p className="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Learn more</button>
+            <button className="mt-4 px-4 py-2 font-bold text-white bg-red-900 rounded">SHOP NOW</button>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
-            <div className="w-12 h-12 bg-blue-500 mx-auto mb-4"></div>
+          <div className="bg-white text-black p-6 rounded-lg">
             <h3 className="text-xl font-bold">Lorem ipsum</h3>
             <p className="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Learn more</button>
+            <button className="mt-4 px-4 py-2 font-bold text-white bg-red-900 rounded">SHOP NOW</button>
           </div>
         </div>
-      </section>
-      <section className="py-16 bg-gray-900">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">Deploy faster</h2>
-          <p className="mt-4 text-lg">Welcome to react animation demonstration</p>
+
+        <div>
+          <button className="mt-4 px-4 py-2 font-bold text-white bg-red-900 rounded">VISIT STORE</button>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold">8000+</h3>
-            <p className="mt-2">Lorem ipsum dolor sit amet</p>
+        
+      </motion.section>
+
+      <motion.section
+        id="tour"
+        className="py-60"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-3xl font-bold text-center mb-8 my-8">TOUR</h2>
+        <div className="space-y-4 max-w-2xl mx-auto">
+          <div className="bg-white text-black p-4 rounded-lg flex justify-between items-center">
+            <div>
+              <h3 className="font-bold">Lorem ipsum</h3>
+              <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <button className="px-4 py-2 font-bold text-white bg-red-900 rounded">TICKETS</button>
           </div>
-          <div className="text-center">
-            <h3 className="text-2xl font-bold">900m+</h3>
-            <p className="mt-2">Lorem ipsum dolor sit amet</p>
+          <div className="bg-white text-black p-4 rounded-lg flex justify-between items-center">
+            <div>
+              <h3 className="font-bold">Lorem ipsum</h3>
+              <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <button className="px-4 py-2 font-bold text-white bg-red-900 rounded">TICKETS</button>
           </div>
-          <div className="text-center">
-            <h3 className="text-2xl font-bold">99.9%</h3>
-            <p className="mt-2">Lorem ipsum dolor sit amet</p>
+          <div className="bg-white text-black p-4 rounded-lg flex justify-between items-center">
+            <div>
+              <h3 className="font-bold">Lorem ipsum</h3>
+              <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <button className="px-4 py-2 font-bold text-white bg-red-900 rounded">TICKETS</button>
           </div>
-          <div className="text-center">
-            <h3 className="text-2xl font-bold">12m</h3>
-            <p className="mt-2">Lorem ipsum dolor sit amet</p>
+          <div className="bg-white text-black p-4 rounded-lg flex justify-between items-center">
+            <div>
+              <h3 className="font-bold">Lorem ipsum</h3>
+              <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <button className="px-4 py-2 font-bold text-white bg-red-900 rounded">TICKETS</button>
           </div>
         </div>
-      </section>
-      <footer className="py-8 bg-gray-800 text-center">
+      </motion.section>
+
+      <motion.section
+        id="sign-up"
+        className="py-16 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-3xl font-bold mb-8">SIGN UP TO THE NEWSLETTER BELOW</h2>
+        <form className="max-w-xl mx-auto space-y-4">
+          <input type="email" placeholder="Email" className="w-full p-4 bg-gray-200 text-black rounded" required />
+          <input type="text" placeholder="Phone Number" className="w-full p-4 bg-gray-200 text-black rounded" required />
+          <select className="w-full p-4 bg-gray-300 text-black rounded" required>
+            <option>Choose Country</option>
+          </select>
+          <button type="submit" className="w-full p-4 font-bold text-white bg-red-900 rounded">REGISTER</button>
+          <div className="text-left mt-4 space-y-5">
+            <label className="flex items-center">
+              <input type="checkbox" className="mr-2" />
+              Receive SMS from Artist Name
+            </label>
+            <label className="flex items-center mb-4">
+              <input type="checkbox" className="mr-2" />
+              Sign me up for updates about new music, competitions, exclusive promotions & events from artists similar to Artist Name
+            </label>
+            <p className="text-xs mt-4">
+              Emails will be sent by or on behalf of Universal Music Operations Ltd, 4 Pancras Square, London. N1C 4AG, UK. +44 (0)20 3932 6000. You may withdraw your consent at any time. See Privacy Policy at <a href="https://www.umusic.co.uk/privacy.html" className="underline">https://www.umusic.co.uk/privacy.html</a>.
+            </p>
+            <p className="text-xs mt-2">
+              By ticking the SMS opt-in box and submitting this form, I agree to receive text messages from and about Artist Name (including prerecorded and/or by autodialer). Up to 20 messages per month per opt-in. Consent is not a condition of any purchase. Msg & data rates may apply. See Privacy Policy and Terms for further information.
+            </p>
+            <div className="text-xs mt-2">
+              <a href="#" className="underline">Privacy Policy</a> | <a href="#" className="underline">Terms & Conditions</a>
+            </div>
+          </div>
+        </form>
+      </motion.section>
+
+      <footer className="text-center py-8">
         <p>© 2020 Your Company, Inc. All rights reserved.</p>
         <div className="flex justify-center space-x-4 mt-4">
           <Image src="/images/facebook.svg" alt="Facebook" width={24} height={24} />
@@ -99,17 +158,8 @@ const CssAnimation: React.FC = () => {
           <Image src="/images/youtube.svg" alt="YouTube" width={24} height={24} />
         </div>
       </footer>
-      <Dock>
-        {GRADIENTS.map((src, index) =>
-          src ? (
-            <DockCard key={src} src={src} />
-          ) : (
-            <DockDivider key={index} />
-          )
-        )}
-      </Dock>
     </div>
   );
 };
 
-export default CssAnimation;
+export default OnePage;

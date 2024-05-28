@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.module.css';
 
 interface CardProps {
   src: string;
@@ -6,8 +7,8 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ src }) => {
   return (
-    <div className="w-16 h-16">
-      <img src={src} alt="icon" className="w-full h-full object-cover rounded-lg" />
+    <div className="card">
+      <img src={src} alt="Gradient" />
     </div>
   );
 };

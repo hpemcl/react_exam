@@ -37,3 +37,30 @@
     );
   }
   
+  .dock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 20px;
+  }
+  
+  .dock-card {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+  
+  .dock-card:hover {
+    transform: scale(3);
+  }
+  
+  .dock-divider {
+    width: 1px;
+    height: 100%;
+  }
+  
