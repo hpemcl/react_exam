@@ -1,8 +1,22 @@
 import React from 'react';
+import Link from 'next/link';
+import Dock from '../components/dock';
+import DockCard from '../components/dockCard';
+import DockDivider from '../components/dockDivider';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import '../app/globals.css';
+import './styles.css';
+import '../components/styles.module.css';
 
+
+const NAV_ITEMS = [
+  { label: 'Product', path: '/product' },
+  { label: 'Download', path: '/download' },
+  { label: 'Sign Up', path: '/signup' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' }
+];
 
 const OnePage: React.FC = () => {
   return (
@@ -15,14 +29,18 @@ const OnePage: React.FC = () => {
           <Image src="/images/twitter-x.svg" alt="Twitter" width={24} height={24} />
           <Image src="/images/youtube.svg" alt="YouTube" width={24} height={24} />
         </div>
-        <nav className="flex space-x-6 font-bold">
-          <a href="#home">HOME</a>
-          <a href="#products">PRODUCTS</a>
-          <a href="#tour">TOUR</a>
-          <a href="#new-album">NEW ALBUM</a>
-          <a href="#sign-up">SIGN UP</a>
-          <a href="#buy">BUY</a>
-        </nav>
+        <Dock>
+        {NAV_ITEMS.map((item, index) => (
+          <React.Fragment key={index}>
+            <Link legacyBehavior href={item.path}>
+              <a >
+                <DockCard label={item.label} />
+              </a>
+            </Link>
+            {index < NAV_ITEMS.length - 1 && <DockDivider key={`divider-${index}`} />}
+          </React.Fragment>
+        ))}
+      </Dock>
       </header>
 
       <motion.section

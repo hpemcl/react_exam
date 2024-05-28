@@ -1,5 +1,6 @@
 import React from 'react';
 import Dock from '../components/dock';
+import Link from 'next/link';
 import DockCard from '../components/dockCard';
 import AnimatingAuto from '../components/animatingAuto';
 import DockDivider from '../components/dockDivider';
@@ -10,22 +11,26 @@ import './styles.css';
 import '../components/styles.module.css';
 
 const NAV_ITEMS = [
-  'Product',
-  'Download',
-  'Sign Up',
-  'About',
-  'Contact'
+  { label: 'Home', path: './app/page.tsx' },
+  { label: 'CSS-Animation Page', path: '/css_animation' },
+  { label: 'Information Website', path: '/information_website' },
+  { label: 'One Page Website', path: '/one_page' },
+  { label: 'Github', path: '/contact' }
 ];
 
 const AnimationDemo: React.FC = () => {
   return (
     <div className="bg-white text-black min-h-screen">
-       <Dock>
-        {NAV_ITEMS.map((label, index) => (
-          <>
-            <DockCard key={index} label={label} />
+      <Dock>
+        {NAV_ITEMS.map((item, index) => (
+          <React.Fragment key={index}>
+            <Link legacyBehavior href={item.path}>
+              <a >
+                <DockCard label={item.label} />
+              </a>
+            </Link>
             {index < NAV_ITEMS.length - 1 && <DockDivider key={`divider-${index}`} />}
-          </>
+          </React.Fragment>
         ))}
       </Dock>
       <header className="min-h-screen flex flex-row justify-between items-center p-8 space-x-6 animate__animated animate__backInLeft animate__slow">
