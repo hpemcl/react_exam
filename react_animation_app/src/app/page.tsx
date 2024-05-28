@@ -3,7 +3,7 @@ import Link from 'next/link';
 const callouts = [
   {
     name: 'Første Prototype',
-    description: 'One-page Application med React-Reveal',
+    description: 'One-page Application med Framer Motion',
     imageAlt: 'Denne sektion handler om oprettelse af en one-page applikation, typisk brugt til porteføljer eller præsentationer af kunstnere eller bands.',
     href: './one_page', 
   },
