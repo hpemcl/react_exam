@@ -37,7 +37,8 @@ const InformationWebsite: React.FC = () => {
           <span className="bg-white text-black text-sm px-5 py-2 rounded-full">React Animation App</span>
           <h1 className="text-6xl font-bold">Welcome to react animation demonstration</h1>
           <p className="text-lg">Dette er en page som er lavet med react spring. 
-          Der er blevet en animation oppe i navbaren hvis man hover over den. 
+          De små knapper rundt omkring virker ikke. Så det er ikke muligt at klikke rundt. 
+          Der er blevet en animation oppe i navbaren hvis man hover over den med react-spring. 
           Der er også blevet en animation ved længere ned tallene</p>
           <div className="space-x-4">
             <button className="bg-blue-600 px-6 py-2 rounded-full">Get started</button>

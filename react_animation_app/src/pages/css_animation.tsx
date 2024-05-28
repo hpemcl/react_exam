@@ -39,7 +39,7 @@ const AnimationDemo: React.FC = () => {
           <h1 className="text-6xl font-bold">Welcome to react animation demonstration</h1>
           <p className="text-lg">Dette er en page som er lavet med CSS Animation via https://animate.style/. 
           Animationerne er blevet skabt med animate__backInLeft og animate__slow. 
-          Knapperne rundt omkring virker ikke. Så det er ikke muligt at klikke rundt. 
+          De små knapper rundt omkring virker ikke. Så det er ikke muligt at klikke rundt.  
           Dog kan man hover over navbaren som er taget fra react-spring. 
           Skabelonen er taget fra TailwindCSS og bruger ogs dens framework</p>
           <div className="space-x-4">

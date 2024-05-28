@@ -49,8 +49,11 @@ const OnePage: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-4xl font-bold">ARTIST NAME</h1>
-        <p className="mt-4 max-w-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h1 className="text-4xl font-bold uppercase">React Animation App</h1>
+        <p className="mt-4 max-w-xl">Dette er en page som er lavet med framer motion. 
+        De små knapper rundt omkring virker ikke. Så det er ikke muligt at klikke rundt.  
+        Der er blevet en animation oppe i navbaren hvis man hover over den med react-spring.
+        Animationen er også på hele siden, for hvergang man reloader og scroller ned - scroll-effects.</p>
         <button className="mt-6 px-4 py-2 font-bold text-white bg-red-900 rounded">PRE-ORDER NOW</button>
       </motion.section>
 
