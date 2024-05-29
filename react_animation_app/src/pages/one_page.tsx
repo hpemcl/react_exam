@@ -93,7 +93,7 @@ const OnePage: React.FC = () => {
       <motion.section
         id="tour"
         className="py-60"
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 0 }}
         whileInView={{ opacity: 1, y: 50 }}
         viewport={{ once: true }}
         transition={{ duration: 3 }}
