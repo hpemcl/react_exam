@@ -32,4 +32,10 @@ body {
   }
 }
 
-
+.bg-cover-image {
+  position: relative;
+  background-image: url('/images/cover-billede2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

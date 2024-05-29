@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 const callouts = [
   {
@@ -24,11 +26,11 @@ const callouts = [
 
 export default function Home() {
   return (
-    <div className="bg-indigo-900 min-h-screen flex items-center justify-center">
+    <div className="bg-cover-image min-h-screen flex items-center justify-center">
       <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="mx-auto w-full py-16 sm:py-24 lg:py-32">
           <h2 className="text-4xl text-center font-bold ">Welcome to react animation demonstration</h2>
-          <p className="text-center">
+          <p className="text-center w-6/12 mx-auto">
             Denne blogserie dækker tre sektioner, der hver fokuserer på forskellige aspekter af at skabe animerede webapplikationer ved hjælp af React. I alle sektioner anvendes Tailwind som framework for at sikre brugervenlighed og enkelhed i prototypen.
           </p>
 
